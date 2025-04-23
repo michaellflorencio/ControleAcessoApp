@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ControleAcesso
 {
-    public partial class FrmRegistroAcesso: Form
+    public partial class FrmCadastrar: Form
     {
-        public FrmRegistroAcesso()
+        public FrmCadastrar()
         {
             InitializeComponent();
         }

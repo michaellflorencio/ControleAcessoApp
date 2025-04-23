@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace ControleAcesso
 {
-    public partial class FrmLogin : Form
+    public partial class FrmRegistro: Form
     {
-        public FrmLogin()
+        public FrmRegistro()
         {
             InitializeComponent();
-        }
-
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            FrmCadastrar frmCadastrar = new ();
-            frmCadastrar.Show();
         }
     }
 }
