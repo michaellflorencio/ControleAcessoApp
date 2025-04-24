@@ -29,42 +29,43 @@
         private void InitializeComponent()
         {
             label4 = new Label();
-            textBox4 = new TextBox();
+            txtSenha1 = new TextBox();
             Senha = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtSenha = new TextBox();
+            txtCpf = new TextBox();
             button2 = new Button();
             label1 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            txtNome = new TextBox();
+            txtCadastrar = new Button();
+            txtTipo = new ComboBox();
             SuspendLayout();
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10F);
-            label4.Location = new Point(178, 309);
+            label4.Location = new Point(183, 281);
             label4.Name = "label4";
             label4.Size = new Size(111, 19);
             label4.TabIndex = 24;
             label4.Text = "Confirmar Senha";
             // 
-            // textBox4
+            // txtSenha1
             // 
-            textBox4.Location = new Point(295, 298);
-            textBox4.MaximumSize = new Size(200, 100);
-            textBox4.MinimumSize = new Size(35, 30);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(180, 30);
-            textBox4.TabIndex = 23;
+            txtSenha1.Location = new Point(300, 270);
+            txtSenha1.MaximumSize = new Size(200, 100);
+            txtSenha1.MinimumSize = new Size(35, 30);
+            txtSenha1.Name = "txtSenha1";
+            txtSenha1.Size = new Size(180, 30);
+            txtSenha1.TabIndex = 23;
             // 
             // Senha
             // 
             Senha.AutoSize = true;
             Senha.Font = new Font("Segoe UI", 10F);
-            Senha.Location = new Point(243, 260);
+            Senha.Location = new Point(248, 232);
             Senha.Name = "Senha";
             Senha.Size = new Size(46, 19);
             Senha.TabIndex = 22;
@@ -74,7 +75,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F);
-            label3.Location = new Point(256, 202);
+            label3.Location = new Point(261, 174);
             label3.Name = "label3";
             label3.Size = new Size(33, 19);
             label3.TabIndex = 21;
@@ -84,29 +85,29 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F);
-            label2.Location = new Point(243, 155);
+            label2.Location = new Point(248, 127);
             label2.Name = "label2";
             label2.Size = new Size(46, 19);
             label2.TabIndex = 20;
             label2.Text = "Nome";
             // 
-            // textBox2
+            // txtSenha
             // 
-            textBox2.Location = new Point(295, 249);
-            textBox2.MaximumSize = new Size(200, 100);
-            textBox2.MinimumSize = new Size(35, 30);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(180, 30);
-            textBox2.TabIndex = 19;
+            txtSenha.Location = new Point(300, 221);
+            txtSenha.MaximumSize = new Size(200, 100);
+            txtSenha.MinimumSize = new Size(35, 30);
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(180, 30);
+            txtSenha.TabIndex = 19;
             // 
-            // textBox3
+            // txtCpf
             // 
-            textBox3.Location = new Point(295, 191);
-            textBox3.MaximumSize = new Size(200, 100);
-            textBox3.MinimumSize = new Size(35, 30);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(180, 30);
-            textBox3.TabIndex = 18;
+            txtCpf.Location = new Point(300, 163);
+            txtCpf.MaximumSize = new Size(200, 100);
+            txtCpf.MinimumSize = new Size(35, 30);
+            txtCpf.Name = "txtCpf";
+            txtCpf.Size = new Size(180, 30);
+            txtCpf.TabIndex = 18;
             // 
             // button2
             // 
@@ -130,41 +131,53 @@
             label1.Text = "Cadastrar Usuario";
             label1.UseWaitCursor = true;
             // 
-            // textBox1
+            // txtNome
             // 
-            textBox1.Location = new Point(295, 144);
-            textBox1.MaximumSize = new Size(200, 100);
-            textBox1.MinimumSize = new Size(35, 30);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(180, 30);
-            textBox1.TabIndex = 15;
+            txtNome.Location = new Point(300, 116);
+            txtNome.MaximumSize = new Size(200, 100);
+            txtNome.MinimumSize = new Size(35, 30);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(180, 30);
+            txtNome.TabIndex = 15;
+            txtNome.TextChanged += txtNome_TextChanged;
             // 
-            // button1
+            // txtCadastrar
             // 
-            button1.Location = new Point(243, 368);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 35);
-            button1.TabIndex = 14;
-            button1.Text = "Cadastrar";
-            button1.UseVisualStyleBackColor = true;
+            txtCadastrar.Location = new Point(243, 368);
+            txtCadastrar.Name = "txtCadastrar";
+            txtCadastrar.Size = new Size(100, 35);
+            txtCadastrar.TabIndex = 14;
+            txtCadastrar.Text = "Cadastrar";
+            txtCadastrar.UseVisualStyleBackColor = true;
+            txtCadastrar.Click += button1_Click;
             // 
-            // FrmRegistroAcesso
+            // txtTipo
+            // 
+            txtTipo.FormattingEnabled = true;
+            txtTipo.Items.AddRange(new object[] { "Administrador", "Funcionário", "Visitante" });
+            txtTipo.Location = new Point(359, 306);
+            txtTipo.Name = "txtTipo";
+            txtTipo.Size = new Size(121, 23);
+            txtTipo.TabIndex = 25;
+            // 
+            // FrmCadastrar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtTipo);
             Controls.Add(label4);
-            Controls.Add(textBox4);
+            Controls.Add(txtSenha1);
             Controls.Add(Senha);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox3);
+            Controls.Add(txtSenha);
+            Controls.Add(txtCpf);
             Controls.Add(button2);
             Controls.Add(label1);
-            Controls.Add(textBox1);
-            Controls.Add(button1);
-            Name = "FrmRegistroAcesso";
+            Controls.Add(txtNome);
+            Controls.Add(txtCadastrar);
+            Name = "FrmCadastrar";
             Text = "FrmRegistroAcesso";
             ResumeLayout(false);
             PerformLayout();
@@ -173,15 +186,16 @@
         #endregion
 
         private Label label4;
-        private TextBox textBox4;
+        private TextBox txtSenha1;
         private Label Senha;
         private Label label3;
         private Label label2;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtSenha;
+        private TextBox txtCpf;
         private Button button2;
         private Label label1;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox txtNome;
+        private Button txtCadastrar;
+        private ComboBox txtTipo;
     }
 }

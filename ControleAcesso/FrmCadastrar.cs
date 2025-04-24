@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleAcessoClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,25 @@ using System.Windows.Forms;
 
 namespace ControleAcesso
 {
-    public partial class FrmCadastrar: Form
+    public partial class FrmCadastrar : Form
     {
         public FrmCadastrar()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Usuario usuario = new(txtNome.Text, txtCpf.Text, txtSenha.Text, txtSenha1, txtTipo);
+            usuario.Inserir();
+            txtId.Text = usuario.Id.ToString();
+            MessageBox.Show($"Usuário {usuario.Nome} gravado com sucesso com o ID {usuario.Id}");
+            Form1_Load(sender, e);
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
