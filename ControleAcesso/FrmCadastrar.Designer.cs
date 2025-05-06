@@ -40,6 +40,8 @@
             txtNome = new TextBox();
             txtCadastrar = new Button();
             txtTipo = new ComboBox();
+            txtId = new TextBox();
+            label5 = new Label();
             SuspendLayout();
             // 
             // label4
@@ -60,6 +62,7 @@
             txtSenha1.Name = "txtSenha1";
             txtSenha1.Size = new Size(180, 30);
             txtSenha1.TabIndex = 23;
+            txtSenha1.UseSystemPasswordChar = true;
             // 
             // Senha
             // 
@@ -99,6 +102,8 @@
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(180, 30);
             txtSenha.TabIndex = 19;
+            txtSenha.UseSystemPasswordChar = true;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // txtCpf
             // 
@@ -117,6 +122,7 @@
             button2.TabIndex = 17;
             button2.Text = "Cancelar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label1
             // 
@@ -160,11 +166,32 @@
             txtTipo.Size = new Size(121, 23);
             txtTipo.TabIndex = 25;
             // 
+            // txtId
+            // 
+            txtId.Location = new Point(486, 116);
+            txtId.MaximumSize = new Size(200, 100);
+            txtId.MinimumSize = new Size(35, 30);
+            txtId.Name = "txtId";
+            txtId.Size = new Size(35, 30);
+            txtId.TabIndex = 26;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 10F);
+            label5.Location = new Point(519, 121);
+            label5.Name = "label5";
+            label5.Size = new Size(21, 19);
+            label5.TabIndex = 27;
+            label5.Text = "Id";
+            // 
             // FrmCadastrar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label5);
+            Controls.Add(txtId);
             Controls.Add(txtTipo);
             Controls.Add(label4);
             Controls.Add(txtSenha1);
@@ -197,5 +224,7 @@
         private TextBox txtNome;
         private Button txtCadastrar;
         private ComboBox txtTipo;
+        private TextBox txtId;
+        private Label label5;
     }
 }

@@ -20,16 +20,25 @@ namespace ControleAcesso
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new(txtNome.Text, txtCpf.Text, txtSenha.Text, txtSenha1, txtTipo);
+            Usuario usuario = new(txtNome.Text, txtCpf.Text, txtSenha.Text, txtSenha1.Text, txtTipo.Text);
             usuario.Inserir();
             txtId.Text = usuario.Id.ToString();
             MessageBox.Show($"Usuário {usuario.Nome} gravado com sucesso com o ID {usuario.Id}");
-            Form1_Load(sender, e);
         }
 
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

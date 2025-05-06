@@ -55,9 +55,9 @@
             label3.Font = new Font("Segoe UI", 10F);
             label3.Location = new Point(258, 128);
             label3.Name = "label3";
-            label3.Size = new Size(33, 19);
+            label3.Size = new Size(41, 19);
             label3.TabIndex = 21;
-            label3.Text = "CPF";
+            label3.Text = "Email";
             // 
             // textBox2
             // 
@@ -67,6 +67,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(180, 30);
             textBox2.TabIndex = 19;
+            textBox2.UseSystemPasswordChar = true;
             // 
             // textBox3
             // 
@@ -85,6 +86,7 @@
             button2.TabIndex = 17;
             button2.Text = "Cancelar";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label1
             // 
@@ -107,6 +109,7 @@
             button1.TabIndex = 14;
             button1.Text = "Entrar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // linkLabel1
             // 
@@ -145,6 +148,7 @@
             Controls.Add(button1);
             Name = "FrmLogin";
             Text = "FrmLogin";
+            Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

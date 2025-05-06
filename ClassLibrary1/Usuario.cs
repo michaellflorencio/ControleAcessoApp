@@ -16,12 +16,13 @@ namespace ControleAcessoClass
         // propriedades da classe
         public int Id { get; set; }
         public string? Nome { get; set; }
+        public string Email { get; private set; }
         public string? Cpf { get; set; }
         public string? TipoUsuario { get; set; }
         public string? Senha { get; set; }
 
         // construtores
-        public Usuario(int id, string? nome, string? cpf, string? tipoUsuario, string? senha)
+        public Usuario(int id, string? nome, string? email, string? cpf, string? tipoUsuario, string? senha)
         {
             Id = id;
             Nome = nome;
@@ -31,7 +32,15 @@ namespace ControleAcessoClass
         }
         public Usuario(string text)
         {
-            
+
+        }
+
+        public Usuario(string text, string text1, string text2, string text3, string text4) : this(text)
+        {
+        }
+
+        public Usuario()
+        {
         }
 
 
@@ -48,7 +57,31 @@ namespace ControleAcessoClass
         }
 
 
+
+
+
+        public static Usuario EfetuarLogin(string email, string senha)
+        {
+            Usuario usuario = new();
+            var cmd = Banco.Abrir();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "select * from usuarios where email = @email and senha = md5(@senha)";
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@senha", senha);
+            var dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                usuario.Id = dr.GetInt32(0);// campo id - int
+                usuario.Nome = dr.GetString(1);// campo nome - varchar
+                usuario.Cpf = dr.GetString(2);// campo cpf - varchar
+            }
+            return usuario;
+        }
     }
+}
+
+
+
 
     // ENTRADA E SAIDA
     public class RegistroAcesso
@@ -67,6 +100,7 @@ namespace ControleAcessoClass
             DataHora = dataHora;
             TipoOperacao = tipoOperacao;
         }
+    
     }
 
     // AUTENTICACAO
@@ -76,18 +110,7 @@ namespace ControleAcessoClass
     //    {
     //        // simular verificação
     //    }
-    //}
-
-
-
-
-
-
-
-
-
-
-}
+    //
 
 
 
